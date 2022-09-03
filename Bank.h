@@ -6,6 +6,7 @@ class Bank
 {
 	std::unordered_map<int, Account>_accounts;
 	std::string name;
+	std::string log_file = "logs.txt";
 public:
 	Bank();
 	~Bank();
@@ -25,5 +26,6 @@ public:
 	int GenerateAccountNumber();
 	std::string GetName(void);
 	void SetName(std::string name);
+	void Logger(std::string msg);
 };
 

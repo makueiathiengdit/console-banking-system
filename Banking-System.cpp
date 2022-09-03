@@ -19,6 +19,7 @@ enum COMMANDS
     BLOCK,
     UNBLOCK,
     TRANSFER,
+    TEST,
     QUIT
 };
 
@@ -122,6 +123,11 @@ int main()
             to = InputAccountNumber();
             amount = InputAmount();
             bank.Transfer(from, to, amount);
+            break;
+        }
+        case TEST:
+        {
+            bank.Populate(10);
             break;
         }
         default:

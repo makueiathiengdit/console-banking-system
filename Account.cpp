@@ -26,6 +26,7 @@ Account::Account(int acc_no, double bal)
 
 Account::~Account()
 {
+    //std::cout << "Account no " << account_number << " closed\n";
 }
 
 void Account::SetAccountNumber(int number)
@@ -60,7 +61,6 @@ std::string Account::GetName(void)
 
 bool Account::Deposit(double amount)
 {
-    
     if (amount > 0) {
         balance += amount;
         std::cout << "\n" << amount << " deposited to account no " << account_number << "\n";
