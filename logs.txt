@@ -1,26 +1,20 @@
-Created account 100041
-Created account 118467
-Created account 106334
-Created account 126500
-Created account 119169
-Created account 115724
-Created account 111478
-Created account 129358
-Created account 126962
-Created account 124464
-Created account 105705
-Created account 128145
-Deposited 500.000000 to account 128145
-Withdrew 100.000000from 128145
-Deposited 100.000000 to account 100041
-Transfered 100.000000 from 128145 to 100041
-Created account 123281
-Created account 116827
-Created account 109961
-Created account 100491
-Created account 102995
-Created account 111942
-Created account 104827
-Created account 105436
-Created account 132391
-Created account 114604
+Sun Sep  4 03:40:19 2022 Created account 105705
+Sun Sep  4 03:40:19 2022 Created account 128145
+Sun Sep  4 03:40:19 2022 Created account 123281
+Sun Sep  4 03:40:19 2022 Created account 116827
+Sun Sep  4 03:40:19 2022 Created account 109961
+Sun Sep  4 03:40:19 2022 Created account 100491
+Sun Sep  4 03:40:19 2022 Created account 102995
+Sun Sep  4 03:40:19 2022 Created account 111942
+Sun Sep  4 03:40:19 2022 Created account 104827
+Sun Sep  4 03:40:19 2022 Created account 105436
+Sun Sep  4 03:40:20 2022 Created account 132391
+Sun Sep  4 03:40:20 2022 Created account 114604
+Sun Sep  4 03:40:20 2022 Created account 103902
+Sun Sep  4 03:40:20 2022 Created account 100153
+Sun Sep  4 03:40:20 2022 Created account 100292
+Sun Sep  4 03:40:20 2022 Created account 112382
+Sun Sep  4 03:40:20 2022 Created account 117421
+Sun Sep  4 03:40:20 2022 Created account 118716
+Sun Sep  4 03:40:20 2022 Created account 119718
+Sun Sep  4 03:40:20 2022 Created account 119895

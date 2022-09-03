@@ -1,9 +1,11 @@
 #include <iostream>
 #include <iomanip>
+#include <ctime>       /* time_t, struct tm, time, localtime */
+
 #include <fstream>
 #include "Bank.h"
 const std::string DEFAULT_NAME = "ABYEI BANK";
-
+#pragma warning( disable : 4996 34 )
 Bank::Bank()
 {
     name = DEFAULT_NAME;
@@ -182,7 +184,7 @@ bool Bank::Withdraw(int acc_no, double amount)
             {
                 std::string msg = "Withdrew ";
                 msg += std::to_string(amount);
-                msg += "from " + std::to_string(acc_no);
+                msg += " from " + std::to_string(acc_no);
                 Logger(msg);
                 return true;
             }
@@ -213,8 +215,8 @@ void Bank::Transfer(int from, int to, double amount)
                     std::cout << amount << " transfered from " << from << " to " << to << "\n";
                     std::string msg = "Transfered ";
                     msg += std::to_string(amount);
-                    msg += " from " + std::to_string( from);
-                    msg += " to " + std::to_string(to);
+                    msg += "  from " + std::to_string( from);
+                    msg += "  to " + std::to_string(to);
                     Logger(msg);
                 }
             }
@@ -266,7 +268,12 @@ void Bank::Logger(std::string msg)
     std::ofstream log_file(this->log_file, std::ios::app);
     if (log_file.is_open()) 
     {
-       // std::cout << "File opened successfully\n";
+        time_t current_time;
+        time(&current_time);       
+        std::string c_msg = "";
+        c_msg += std::asctime(localtime(&current_time));
+        c_msg[c_msg.length() - 1] = ' ';
+        log_file << c_msg;
         log_file << msg << "\n";
         log_file.close();
     }
