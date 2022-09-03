@@ -88,7 +88,7 @@ void Bank::ShowAll(void)
         std::cout << "No accounts\n";
     else
     {
-        std::cout << std::showpoint << std::setprecision(2);
+        //std::cout << std::showpoint << std::setprecision(2);
         std::cout << "SNO" << std::setw(10) << "ACCOUNT" << std::setw(15) << "NAME" << std::setw(10) << "BALANCE" << std::endl;
         std::cout << "--------------------------------------\n";
         int i = 1;

@@ -146,7 +146,7 @@ int InputAccountNumber(void)
 std::string InputUserName(void)
 {
     std::string name = "";
-    while (name == "")
+    while (name.length() <2)
     {
         std::cout << "Enter owner name: ";
         std::getline(std::cin, name);
