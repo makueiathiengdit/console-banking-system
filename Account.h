@@ -18,8 +18,8 @@ public:
 	double GetBalance(void);
 	void SetName(std::string name);
 	std::string GetName(void);
-	void Deposit(double amount);
-	void Withdraw(double amount);
+	bool Deposit(double amount);
+	bool Withdraw(double amount);
 	void PrintDetails(void);
 	bool IsBlocked(void);
 	void Block(void);

@@ -17,8 +17,8 @@ public:
 	void ShowAll(void);
 	void BlockAccount(int acc_no);
 	void UnblockAccount(int acc_no);
-	void Deposit(int acc_no, double amount);
-	void Withdraw(int acc_no, double amount);
+	bool Deposit(int acc_no, double amount);
+	bool Withdraw(int acc_no, double amount);
 	void Transfer(int from, int to, double amount);
 	void Populate(int how_many);
 	bool AccountExists(int acc_no);

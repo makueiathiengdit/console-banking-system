@@ -58,31 +58,35 @@ std::string Account::GetName(void)
     return name;
 }
 
-void Account::Deposit(double amount)
+bool Account::Deposit(double amount)
 {
     
     if (amount > 0) {
         balance += amount;
         std::cout << "\n" << amount << " deposited to account no " << account_number << "\n";
         this->PrintDetails();
+        return true;
     }
     else
     {
-        throw "Error: amount cannot be negative";
+        std::cout << "Error: amount cannot be negative";
+        return false;
     }
  
 }
 
-void Account::Withdraw(double amount)
+bool Account::Withdraw(double amount)
 {
     if (amount > 0 && amount < balance) {
         balance -= amount;
         std::cout << "\n" << amount << " withdrawn from account no " << account_number << "\n";
         this->PrintDetails();
+        return true;
     }
     else
     {
-        throw ("Error: amount cannot be negative");
+        std::cout << "Error: cannot dispense\n";
+        return false;
     } 
 }
 

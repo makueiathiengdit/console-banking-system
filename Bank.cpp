@@ -88,7 +88,6 @@ void Bank::ShowAll(void)
         std::cout << "No accounts\n";
     else
     {
-        //std::cout << std::showpoint << std::setprecision(2);
         std::cout << "SNO" << std::setw(10) << "ACCOUNT" << std::setw(15) << "NAME" << std::setw(10) << "BALANCE" << std::endl;
         std::cout << "--------------------------------------\n";
         int i = 1;
@@ -96,11 +95,13 @@ void Bank::ShowAll(void)
         {
             if (!acc.second.IsBlocked())
             {
-                std::cout << std::setw(2)
+                std::cout
+                    << std::setw(2)
                     << i << std::setw(10) 
                     << acc.second.GetAccountNumber() 
                     << std::setw(10)
-                    << std::setw(15) << acc.second.GetName() 
+                    << std::setw(15) 
+                    << acc.second.GetName() 
                     << std::setw(10)
                     << acc.second.GetBalance() << "\n";
                 i++;
@@ -134,30 +135,47 @@ void Bank::UnblockAccount(int acc_no)
         std::cout << "Account " << acc_no << " does not exist\n";
 }
 
-void Bank::Deposit(int acc_no, double amount)
+bool Bank::Deposit(int acc_no, double amount)
 {
     if (AccountExists(acc_no)) 
     {
         if (!_accounts[acc_no].IsBlocked())
-            _accounts[acc_no].Deposit(amount);
-        else
-            std::cout << "CANNOT DEPOSIT\n account "<<acc_no << "is blocked\n";
+            if(_accounts[acc_no].Deposit(amount))
+                return true;
+            else
+            {
+                std::cout << "CANNOT DEPOSIT\n account " << acc_no << "is blocked\n";
+                return false;
+            }
     }
     else
+    {
         std::cout << "Account " << acc_no << " does not exist\n";
+        return false;
+    }
 
 }
 
-void Bank::Withdraw(int acc_no, double amount)
+bool Bank::Withdraw(int acc_no, double amount)
 {
     if (AccountExists(acc_no))
     {
         if (!_accounts[acc_no].IsBlocked())
-            _accounts[acc_no].Withdraw(amount);
+        {
+            if (_accounts[acc_no].Withdraw(amount))
+                return true;
+        }
         else
-            std::cout << "CANNOT WITHDRAW\n account " <<acc_no << " is blocked\n";
-    }else
+        {
+            std::cout << "CANNOT WITHDRAW\n account " << acc_no << " is blocked\n";
+            return false;
+        }
+    }
+    else
+    {
         std::cout << "Account " << acc_no << " does not exist\n";
+        return false;
+    }
 
 }
 
@@ -167,10 +185,12 @@ void Bank::Transfer(int from, int to, double amount)
     {
         if (amount > 0)
         {
-            Withdraw(from, amount);
-            Deposit(to, amount);
-            std::cout << "\n";
-            std::cout << amount << " transfered from " << from << " to " << to << "\n";
+            if (Withdraw(from, amount) && Deposit(to, amount))
+            {
+                std::cout << "\n";
+                std::cout << amount << " transfered from " << from << " to " << to << "\n";
+            }
+            
         }
         else
         {
