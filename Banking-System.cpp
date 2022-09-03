@@ -23,6 +23,7 @@ enum COMMANDS
 };
 
 int InputAccountNumber(void);
+std::string InputUserName(void);
 double InputAmount(void);
 
 int main()
@@ -55,7 +56,8 @@ int main()
             /*
                 bank.Populate(10);
             */
-            bank.CreateAccount();
+            std::string owner = InputUserName();
+            bank.CreateAccount(owner);
             break;
         }
         case SHOW:
@@ -122,7 +124,6 @@ int main()
             bank.Transfer(from, to, amount);
             break;
         }
-
         default:
             break;
         }
@@ -140,6 +141,17 @@ int InputAccountNumber(void)
         std::cin >> acc_no;
     }
     return acc_no;
+}
+
+std::string InputUserName(void)
+{
+    std::string name = "";
+    while (name == "")
+    {
+        std::cout << "Enter owner name: ";
+        std::getline(std::cin, name);
+    }
+    return name;
 }
 
 double InputAmount(void)

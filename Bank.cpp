@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "Bank.h"
 const std::string DEFAULT_NAME = "ABYEI BANK";
 
@@ -17,14 +18,15 @@ Account Bank::FindById(int acc_no)
     return _accounts[acc_no];
 }
 
-void Bank::CreateAccount()
+void Bank::CreateAccount(std::string owner)
 {
     int acc_no = GenerateAccountNumber();
     while (AccountExists(acc_no))
     {
         acc_no = GenerateAccountNumber();
     }
-    Account acc(acc_no);
+
+    Account acc(acc_no, owner);
 
     /*
         acc.SetBalance(rand());
@@ -68,8 +70,11 @@ void Bank::Show(int acc_no)
    
     if (AccountExists(acc_no))
     {
-        std::cout << "\nACC\tBALANCE\n";
-        std::cout << _accounts[acc_no].GetAccountNumber() << "\t" << _accounts[acc_no].GetBalance() << "\n";
+        std::cout << "\nACCOUNT\t\tNAME\t\tBALANCE\n";
+        std::cout << "---------------------------------------\n";
+        std::cout << _accounts[acc_no].GetAccountNumber()<< "\t\t"
+                  << _accounts[acc_no].GetName()<< "\t\t" 
+                  << _accounts[acc_no].GetBalance() << std::endl;
     }
     else
     {
@@ -83,14 +88,21 @@ void Bank::ShowAll(void)
         std::cout << "No accounts\n";
     else
     {
-        std::cout << "\nSNO\tACCOUNT\t\tBALANCE\n";
-        std::cout << "-------------------------------\n";
+        std::cout << std::showpoint << std::setprecision(2);
+        std::cout << "SNO" << std::setw(10) << "ACCOUNT" << std::setw(15) << "NAME" << std::setw(10) << "BALANCE" << std::endl;
+        std::cout << "--------------------------------------\n";
         int i = 1;
         for (auto& acc : _accounts)
         {
             if (!acc.second.IsBlocked())
             {
-                std::cout << i << "\t" << acc.second.GetAccountNumber() << "\t\t" << acc.second.GetBalance() << "\n";
+                std::cout << std::setw(2)
+                    << i << std::setw(10) 
+                    << acc.second.GetAccountNumber() 
+                    << std::setw(10)
+                    << std::setw(15) << acc.second.GetName() 
+                    << std::setw(10)
+                    << acc.second.GetBalance() << "\n";
                 i++;
             }
         }
@@ -175,7 +187,7 @@ void Bank::Populate(int how_many)
 {
     while (how_many)
     {
-        CreateAccount();
+        CreateAccount("Test");
         how_many--;
     }
 }

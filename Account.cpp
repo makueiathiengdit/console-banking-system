@@ -2,7 +2,6 @@
 #include <string>
 #include "Account.h"
 
-
 Account::Account(void)
 {
     account_number = 0;
@@ -10,16 +9,17 @@ Account::Account(void)
     is_blocked = false;
 }
 
-Account::Account(int number)
+Account::Account(int acc_no, std::string owner)
 {
-    account_number = number;
+    account_number = acc_no;
     balance = 0.0;
+    name = owner;
     is_blocked = false;
 }
 
-Account::Account(int acc, double bal)
+Account::Account(int acc_no, double bal)
 {
-    account_number = acc;
+    account_number = acc_no;
     balance = bal;
     is_blocked = false;
 }
@@ -46,6 +46,16 @@ void Account::SetBalance(double bal)
 double Account::GetBalance(void)
 {
     return balance;
+}
+
+void Account::SetName(std::string name)
+{
+    this->name = name;
+}
+
+std::string Account::GetName(void)
+{
+    return name;
 }
 
 void Account::Deposit(double amount)

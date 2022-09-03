@@ -10,8 +10,7 @@ public:
 	Bank();
 	~Bank();
 	Account FindById(int);
-	
-	void CreateAccount();
+	void CreateAccount(std::string owner);
 	void DeleteAccount(int acc_no);
 	void DeleteAll(void);
 	void Show(int acc_no);
