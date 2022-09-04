@@ -106,12 +106,13 @@ void Bank::ShowAll(void)
             {
                 std::cout
                     << std::setw(2)
-                    << i << std::setw(10) 
-                    << acc.second.GetAccountNumber() 
-                    << std::setw(10)
-                    << std::setw(15) 
+                    << i << std::setw(10)
+                    << acc.second.GetAccountNumber();
+                std::cout << std::setw(15);
+                    std::cout << std::right
                     << acc.second.GetName() 
                     << std::setw(10)
+                    <<std::right
                     << acc.second.GetBalance() << "\n";
                 i++;
             }
@@ -152,6 +153,7 @@ bool Bank::Deposit(int acc_no, double amount)
     if (AccountExists(acc_no)) 
     {
         if (!_accounts[acc_no].IsBlocked())
+        {
             if (_accounts[acc_no].Deposit(amount))
             {
                 std::string msg = "Deposited ";
@@ -160,17 +162,18 @@ bool Bank::Deposit(int acc_no, double amount)
                 Logger(msg);
                 return true;
             }
-            else
-            {
-                std::cout << "CANNOT DEPOSIT\n account " << acc_no << "is blocked\n";
-                return false;
-            }
+        }
+        else
+        {
+            std::cout << "CANNOT DEPOSIT\n account " << acc_no << "is blocked\n";
+        }
     }
     else
     {
         std::cout << "Account " << acc_no << " does not exist\n";
-        return false;
+
     }
+    return false;
 
 }
 
@@ -191,15 +194,14 @@ bool Bank::Withdraw(int acc_no, double amount)
         }
         else
         {
-            std::cout << "CANNOT WITHDRAW\n account " << acc_no << " is blocked\n";
-            return false;
+            std::cout << "CANNOT WITHDRAW\n account " << acc_no << " is blocked\n";  
         }
     }
     else
     {
         std::cout << "Account " << acc_no << " does not exist\n";
-        return false;
     }
+    return false;
 }
 
 void Bank::Transfer(int from, int to, double amount)

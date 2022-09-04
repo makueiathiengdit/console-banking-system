@@ -19,8 +19,8 @@ enum COMMANDS
     BLOCK,
     UNBLOCK,
     TRANSFER,
-    TEST,
-    QUIT
+    QUIT,
+    TEST
 };
 
 int InputAccountNumber(void);
