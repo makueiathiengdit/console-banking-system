@@ -33,7 +33,7 @@ int main()
     Bank bank;
     int command = SHOW_ALL;
     while (true) {
-        std::cout << "\n\n\t*** WELCOME TO " << bank.GetName() << " ***\n";
+        std::cout << "\n\n*** WELCOME TO " << bank.GetName() << " ***\n";
         std::cout << "\n========== COMMANDS MENU ==========\n";
         std::cout << "0\tCREATE\n";
         std::cout << "1\tSHOW\n";
@@ -54,9 +54,6 @@ int main()
         {
         case CREATE:
         {
-            /*
-                bank.Populate(10);
-            */
             std::string owner = InputUserName();
             bank.CreateAccount(owner);
             break;
@@ -152,7 +149,7 @@ int InputAccountNumber(void)
 std::string InputUserName(void)
 {
     std::string name = "";
-    while (name.length() <2)
+    while (name.length() < 2)
     {
         std::cout << "Enter owner name: ";
         std::getline(std::cin, name);

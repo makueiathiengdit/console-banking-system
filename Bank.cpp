@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include <ctime>       /* time_t, struct tm, time, localtime */
+#include <ctime>       
 
 #include <fstream>
 #include "Bank.h"
@@ -9,10 +9,16 @@ const std::string DEFAULT_NAME = "ABYEI BANK";
 Bank::Bank()
 {
     name = DEFAULT_NAME;
+    ReadFromDB();
 }
 
 Bank::~Bank()
 {
+    std::cout << "==== YEARLY REVIEW =====\n";
+    std::cout << "This year we had the following: \n";
+    std::cout << "Number of accounts: " << TotalAccounts() << "\n";
+    std::cout << "Amount in the bank: " << std::to_string(BankValue()) << "\n";
+    WriteToDB();
     std::cout << "Bank closed\n";
 }
 
@@ -31,9 +37,6 @@ void Bank::CreateAccount(std::string owner)
 
     Account acc(acc_no, owner);
 
-    /*
-        acc.SetBalance(rand());
-    */
     _accounts[acc_no] = acc;
     std::cout << "\nAccount created: " << acc_no << "\n";
     std::string msg = "Created account ";
@@ -65,6 +68,7 @@ void Bank::DeleteAll(void)
     {
         std::cout << "Deleting all accounts......";
         _accounts.clear();
+        WriteToDB();
         std::cout << "done\n";
         Logger("Deleted all accounts");
     }
@@ -83,7 +87,7 @@ void Bank::Show(int acc_no)
         std::cout << "---------------------------------------\n";
         std::cout << _accounts[acc_no].GetAccountNumber()<< "\t\t"
                   << _accounts[acc_no].GetName()<< "\t\t" 
-                  << _accounts[acc_no].GetBalance() << std::endl;
+                  << std::to_string(_accounts[acc_no].GetBalance()) << std::endl;
     }
     else
     {
@@ -109,11 +113,11 @@ void Bank::ShowAll(void)
                     << i << std::setw(10)
                     << acc.second.GetAccountNumber();
                 std::cout << std::setw(15);
-                    std::cout << std::right
-                    << acc.second.GetName() 
-                    << std::setw(10)
-                    <<std::right
-                    << acc.second.GetBalance() << "\n";
+                std::cout << std::right
+                    << acc.second.GetName()
+                    << std::right;
+                    std::cout<<std::setw(15)
+                    << std::to_string(acc.second.GetBalance()) << "\n";
                 i++;
             }
         }
@@ -240,6 +244,17 @@ void Bank::Populate(int how_many)
         CreateAccount("Test");
         how_many--;
     }
+  
+    for (auto& acc : _accounts)
+    {
+        int amount = rand();
+        acc.second.Deposit(amount);
+        std::string msg = "Deposited ";
+        msg += std::to_string(amount);
+        msg += " to account: ";
+        msg += std::to_string(acc.second.GetAccountNumber());
+        Logger(msg);
+    }  
 }
 
 bool Bank::AccountExists(int acc_no)
@@ -282,5 +297,59 @@ void Bank::Logger(std::string msg)
     else
     {
         std::cout << "Error opening file: " << this->log_file << "\n";
+    }
+}
+
+int Bank::TotalAccounts(void)
+{
+    return int(_accounts.size());
+}
+
+double Bank::BankValue(void)
+{
+    double total_amount = 0.0;
+    for (auto& acc : _accounts)
+        total_amount += acc.second.GetBalance();
+    return total_amount;
+}
+
+void Bank::ReadFromDB(void)
+{
+    std::ifstream db(this->db_name, std::ios::in|std::ios::app);
+    if (db.is_open())
+    {
+        std::cout << "Reading from db...\n";
+        std::string line;
+        std::cout << "ACCOUNT\tBALANCE\n";
+        while (std::getline(db, line))
+        {
+            std::string acc_no, bal;
+            std::size_t pos = line.find(' ');
+            acc_no = line.substr(0,pos-1);
+            bal = line.substr(pos +  4);
+     
+            Account acc(int(std::stoi(acc_no)), double (std::stod(bal)));
+            acc.SetName("Test");
+            _accounts[std::stoi(acc_no)] = acc;
+        }
+        db.close();
+    }
+    else
+    {
+        std::cout << "Error opening file: " << this->db_name;
+    }
+}
+
+void Bank::WriteToDB(void)
+{
+    std::ofstream db(db_name);
+    if (db.is_open()) {
+        std::cout << "Writing to db...\n";
+        for (auto& acc : _accounts)
+        {
+            db << acc.second.GetAccountNumber() << "    " << acc.second.GetBalance() << "\n";
+        }
+        std::cout << "Data saved successfully\n";
+        db.close();
     }
 }

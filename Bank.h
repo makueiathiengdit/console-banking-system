@@ -7,6 +7,7 @@ class Bank
 	std::unordered_map<int, Account>_accounts;
 	std::string name;
 	std::string log_file = "logs.txt";
+	std::string db_name = "db.txt";
 public:
 	Bank();
 	~Bank();
@@ -27,5 +28,9 @@ public:
 	std::string GetName(void);
 	void SetName(std::string name);
 	void Logger(std::string msg);
+	int TotalAccounts(void);
+	double BankValue(void);
+	void ReadFromDB(void);
+	void WriteToDB(void);
 };
 
