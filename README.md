@@ -1,2 +1,15 @@
 # Console Banking System
-Supports account creation, deletion, blocking, unblocking, deposit, withdrawal and transfer
+Supports the following account operations :  
+- create
+- delete
+- delete all
+- show
+- show all
+- update
+- block 
+- unblock
+- deposit 
+- withdraw   
+- transfer   
+
+# Has file based db
