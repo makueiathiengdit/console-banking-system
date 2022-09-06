@@ -68,7 +68,7 @@ void Bank::DeleteAll(void)
     {
         std::cout << "Deleting all accounts......";
         _accounts.clear();
-        WriteToDB();
+        //WriteToDB();
         std::cout << "done\n";
         Logger("Deleted all accounts");
     }
@@ -237,6 +237,27 @@ void Bank::Transfer(int from, int to, double amount)
         }
 }
 
+void Bank::UpdateAccountName(int acc_no, std::string name)
+{
+    if (AccountExists(acc_no))
+    {
+        if (name != _accounts[acc_no].GetName())
+        {
+            std::string old_name = _accounts[acc_no].GetName();
+            _accounts[acc_no].SetName(name);
+            std::string msg = "Update acc no ";
+            msg += std::to_string(acc_no);
+            msg += " changed name from " + old_name + " to " + name;
+            Logger(msg);
+        }
+
+    }
+    else 
+    {
+        std::cout << "Account no: " << acc_no << " does not exist\n";
+    }
+}
+
 void Bank::Populate(int how_many)
 {
     while (how_many)
@@ -318,14 +339,14 @@ void Bank::ReadFromDB(void)
     std::ifstream db(this->db_name, std::ios::in|std::ios::app);
     if (db.is_open())
     {
-        std::cout << "Reading from db...\n";
+        std::cout << "Reading from db...";
         std::string line;
-        std::cout << "ACCOUNT\tBALANCE\n";
+        
         while (std::getline(db, line))
         {
             std::string acc_no, bal;
             std::size_t pos = line.find(' ');
-            acc_no = line.substr(0,pos-1);
+            acc_no = line.substr(0,pos);
             bal = line.substr(pos +  4);
      
             Account acc(int(std::stoi(acc_no)), double (std::stod(bal)));
@@ -333,6 +354,8 @@ void Bank::ReadFromDB(void)
             _accounts[std::stoi(acc_no)] = acc;
         }
         db.close();
+        std::cout << "Done\n";
+
     }
     else
     {
@@ -344,12 +367,12 @@ void Bank::WriteToDB(void)
 {
     std::ofstream db(db_name);
     if (db.is_open()) {
-        std::cout << "Writing to db...\n";
+        std::cout << "Writing to db...";
         for (auto& acc : _accounts)
         {
             db << acc.second.GetAccountNumber() << "    " << acc.second.GetBalance() << "\n";
         }
-        std::cout << "Data saved successfully\n";
+        std::cout << "Done\n";
         db.close();
     }
 }

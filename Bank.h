@@ -22,6 +22,7 @@ public:
 	bool Deposit(int acc_no, double amount);
 	bool Withdraw(int acc_no, double amount);
 	void Transfer(int from, int to, double amount);
+	void UpdateAccountName(int acc_no, std::string name);
 	void Populate(int how_many);
 	bool AccountExists(int acc_no);
 	int GenerateAccountNumber();

@@ -19,6 +19,7 @@ enum COMMANDS
     BLOCK,
     UNBLOCK,
     TRANSFER,
+    UPDATE,
     QUIT,
     TEST
 };
@@ -45,7 +46,8 @@ int main()
         std::cout << "7\tBLOCK\n";
         std::cout << "8\tUNBLOCK\n";
         std::cout << "9\tTRANSFER\n";
-        std::cout << "10\tQUIT\n";
+        std::cout << "10\tUPDATE\n";
+        std::cout << "11\tQUIT\n";
         std::cout << "\nENTER COMMAND: ";
         std::cin >> command;
         if (command == QUIT)
@@ -120,6 +122,13 @@ int main()
             to = InputAccountNumber();
             amount = InputAmount();
             bank.Transfer(from, to, amount);
+            break;
+        }
+        case UPDATE:
+        {
+            int acc_no = InputAccountNumber();
+            std::string name = InputUserName();
+            bank.UpdateAccountName(acc_no, name);
             break;
         }
         case TEST:
