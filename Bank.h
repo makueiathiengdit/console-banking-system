@@ -28,7 +28,7 @@ public:
 	int GenerateAccountNumber();
 	std::string GetName(void);
 	void SetName(std::string name);
-	void Logger(std::string msg);
+	void Log(std::string msg);
 	int TotalAccounts(void);
 	double BankValue(void);
 	void ReadFromDB(void);

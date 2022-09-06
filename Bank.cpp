@@ -41,7 +41,7 @@ void Bank::CreateAccount(std::string owner)
     std::cout << "\nAccount created: " << acc_no << "\n";
     std::string msg = "Created account ";
     msg += std::to_string(acc_no);
-    Logger(msg);
+    Log(msg);
 }
 
 void Bank::DeleteAccount(int acc_no)
@@ -51,7 +51,7 @@ void Bank::DeleteAccount(int acc_no)
         _accounts.erase(acc_no);
         std::cout << "....done\n";
         std::string msg = "Deleted account " + std::to_string(acc_no);
-        Logger(msg);
+        Log(msg);
     }
     else
     {
@@ -70,7 +70,7 @@ void Bank::DeleteAll(void)
         _accounts.clear();
         //WriteToDB();
         std::cout << "done\n";
-        Logger("Deleted all accounts");
+        Log("Deleted all accounts");
     }
     else
     {
@@ -133,7 +133,7 @@ void Bank::BlockAccount(int acc_no)
         _accounts[acc_no].Block();
         std::cout << "....done\n";
         std::string msg = "Blocked account " + acc_no;
-        Logger(msg);
+        Log(msg);
     }
     else
         std::cout << "Account " << acc_no << " does not exist\n";
@@ -146,7 +146,7 @@ void Bank::UnblockAccount(int acc_no)
         std::cout << "Unblocking account no " << acc_no;
         _accounts[acc_no].Unblock();
         std::cout << "....done\n";
-        Logger("Unblocked account " + std::to_string(acc_no));
+        Log("Unblocked account " + std::to_string(acc_no));
     }
     else
         std::cout << "Account " << acc_no << " does not exist\n";
@@ -163,7 +163,7 @@ bool Bank::Deposit(int acc_no, double amount)
                 std::string msg = "Deposited ";
                 msg += std::to_string(amount);
                 msg += " to account " + std::to_string(acc_no);
-                Logger(msg);
+                Log(msg);
                 return true;
             }
         }
@@ -192,7 +192,7 @@ bool Bank::Withdraw(int acc_no, double amount)
                 std::string msg = "Withdrew ";
                 msg += std::to_string(amount);
                 msg += " from " + std::to_string(acc_no);
-                Logger(msg);
+                Log(msg);
                 return true;
             }
         }
@@ -223,7 +223,7 @@ void Bank::Transfer(int from, int to, double amount)
                     msg += std::to_string(amount);
                     msg += "  from " + std::to_string( from);
                     msg += "  to " + std::to_string(to);
-                    Logger(msg);
+                    Log(msg);
                 }
             }
             else
@@ -248,7 +248,8 @@ void Bank::UpdateAccountName(int acc_no, std::string name)
             std::string msg = "Update acc no ";
             msg += std::to_string(acc_no);
             msg += " changed name from " + old_name + " to " + name;
-            Logger(msg);
+            std::cout << msg;
+            Log(msg);
         }
 
     }
@@ -274,7 +275,7 @@ void Bank::Populate(int how_many)
         msg += std::to_string(amount);
         msg += " to account: ";
         msg += std::to_string(acc.second.GetAccountNumber());
-        Logger(msg);
+        Log(msg);
     }  
 }
 
@@ -301,7 +302,7 @@ void Bank::SetName(std::string name)
     this->name = name;
 }
 
-void Bank::Logger(std::string msg)
+void Bank::Log(std::string msg)
 {
     std::ofstream log_file(this->log_file, std::ios::app);
     if (log_file.is_open()) 

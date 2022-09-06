@@ -1,150 +1,23 @@
-
-Tue Sep  6 18:25:44 2022 Created account 100041
-Tue Sep  6 18:25:44 2022 Created account 118467
-Tue Sep  6 18:25:44 2022 Created account 106334
-Tue Sep  6 18:25:44 2022 Created account 126500
-Tue Sep  6 18:25:44 2022 Created account 119169
-Tue Sep  6 18:25:44 2022 Created account 115724
-Tue Sep  6 18:25:44 2022 Created account 111478
-Tue Sep  6 18:25:44 2022 Created account 129358
-Tue Sep  6 18:25:44 2022 Created account 126962
-Tue Sep  6 18:25:44 2022 Created account 124464
-Tue Sep  6 18:25:44 2022 Deposited 5705 to account: 126962
-Tue Sep  6 18:25:44 2022 Deposited 28145 to account: 111478
-Tue Sep  6 18:25:44 2022 Deposited 23281 to account: 100041
-Tue Sep  6 18:25:44 2022 Deposited 16827 to account: 118467
-Tue Sep  6 18:25:44 2022 Deposited 9961 to account: 106334
-Tue Sep  6 18:25:44 2022 Deposited 491 to account: 119169
-Tue Sep  6 18:25:44 2022 Deposited 2995 to account: 126500
-Tue Sep  6 18:25:44 2022 Deposited 11942 to account: 115724
-Tue Sep  6 18:25:44 2022 Deposited 4827 to account: 129358
-Tue Sep  6 18:25:44 2022 Deposited 5436 to account: 124464
-Tue Sep  6 18:27:21 2022 Deposited 10000.000000 to account 11916
-Tue Sep  6 18:28:02 2022 Deleted all accounts
-Tue Sep  6 18:28:04 2022 Created account 100041
-Tue Sep  6 18:28:04 2022 Created account 118467
-Tue Sep  6 18:28:04 2022 Created account 106334
-Tue Sep  6 18:28:04 2022 Created account 126500
-Tue Sep  6 18:28:04 2022 Created account 119169
-Tue Sep  6 18:28:04 2022 Created account 115724
-Tue Sep  6 18:28:04 2022 Created account 111478
-Tue Sep  6 18:28:04 2022 Created account 129358
-Tue Sep  6 18:28:04 2022 Created account 126962
-Tue Sep  6 18:28:04 2022 Created account 124464
-Tue Sep  6 18:28:04 2022 Deposited 5705 to account: 100041
-Tue Sep  6 18:28:04 2022 Deposited 28145 to account: 118467
-Tue Sep  6 18:28:04 2022 Deposited 23281 to account: 106334
-Tue Sep  6 18:28:04 2022 Deposited 16827 to account: 126500
-Tue Sep  6 18:28:04 2022 Deposited 9961 to account: 119169
-Tue Sep  6 18:28:04 2022 Deposited 491 to account: 115724
-Tue Sep  6 18:28:04 2022 Deposited 2995 to account: 126962
-Tue Sep  6 18:28:04 2022 Deposited 11942 to account: 111478
-Tue Sep  6 18:28:04 2022 Deposited 4827 to account: 129358
-Tue Sep  6 18:28:04 2022 Deposited 5436 to account: 124464
-Tue Sep  6 18:28:19 2022 Deposited 10000.000000 to account 119169
-Tue Sep  6 18:28:56 2022 Created account 105705
-Tue Sep  6 18:28:56 2022 Created account 128145
-Tue Sep  6 18:28:56 2022 Created account 123281
-Tue Sep  6 18:28:56 2022 Created account 116827
-Tue Sep  6 18:28:56 2022 Created account 109961
-Tue Sep  6 18:28:56 2022 Created account 100491
-Tue Sep  6 18:28:56 2022 Created account 102995
-Tue Sep  6 18:28:56 2022 Created account 111942
-Tue Sep  6 18:28:56 2022 Created account 104827
-Tue Sep  6 18:28:56 2022 Created account 105436
-Tue Sep  6 18:28:56 2022 Deposited 32391 to account: 126962
-Tue Sep  6 18:28:56 2022 Deposited 14604 to account: 111478
-Tue Sep  6 18:28:56 2022 Deposited 3902 to account: 100041
-Tue Sep  6 18:28:56 2022 Deposited 153 to account: 118467
-Tue Sep  6 18:28:56 2022 Deposited 292 to account: 106334
-Tue Sep  6 18:28:56 2022 Deposited 12382 to account: 123281
-Tue Sep  6 18:28:56 2022 Deposited 17421 to account: 119169
-Tue Sep  6 18:28:56 2022 Deposited 18716 to account: 126500
-Tue Sep  6 18:28:56 2022 Deposited 19718 to account: 115724
-Tue Sep  6 18:28:56 2022 Deposited 19895 to account: 128145
-Tue Sep  6 18:28:56 2022 Deposited 5447 to account: 129358
-Tue Sep  6 18:28:56 2022 Deposited 21726 to account: 124464
-Tue Sep  6 18:28:56 2022 Deposited 14771 to account: 105705
-Tue Sep  6 18:28:56 2022 Deposited 11538 to account: 116827
-Tue Sep  6 18:28:56 2022 Deposited 1869 to account: 109961
-Tue Sep  6 18:28:56 2022 Deposited 19912 to account: 100491
-Tue Sep  6 18:28:56 2022 Deposited 25667 to account: 102995
-Tue Sep  6 18:28:56 2022 Deposited 26299 to account: 111942
-Tue Sep  6 18:28:56 2022 Deposited 17035 to account: 104827
-Tue Sep  6 18:28:56 2022 Deposited 9894 to account: 105436
-Tue Sep  6 18:29:54 2022 Withdrew 8000.000000 from 126962
-Tue Sep  6 18:29:55 2022 Deposited 8000.000000 to account 100041
-Tue Sep  6 18:29:55 2022 Transfered 8000.000000  from 126962  to 100041
-Tue Sep  6 18:30:54 2022 Withdrew 8050.000000 from 126500
-Tue Sep  6 18:30:54 2022 Deposited 8050.000000 to account 109961
-Tue Sep  6 18:30:54 2022 Transfered 8050.000000  from 126500  to 109961
-Tue Sep  6 18:31:37 2022 Withdrew 7000.000000 from 119169
-Tue Sep  6 18:31:37 2022 Deposited 7000.000000 to account 105436
-Tue Sep  6 18:31:37 2022 Transfered 7000.000000  from 119169  to 105436
-Tue Sep  6 18:32:39 2022 Withdrew 1000.000000 from 119169
-Tue Sep  6 18:32:39 2022 Deposited 1000.000000 to account 109961
-Tue Sep  6 18:32:39 2022 Transfered 1000.000000  from 119169  to 109961
-Tue Sep  6 18:42:06 2022 Update acc no 100041 changed name from Test to Awet
-Tue Sep  6 18:42:06 2022 Created account 132391
-Tue Sep  6 18:42:06 2022 Created account 114604
-Tue Sep  6 18:42:06 2022 Created account 103902
-Tue Sep  6 18:42:06 2022 Created account 100153
-Tue Sep  6 18:42:06 2022 Created account 100292
-Tue Sep  6 18:42:06 2022 Created account 112382
-Tue Sep  6 18:42:06 2022 Created account 117421
-Tue Sep  6 18:42:06 2022 Created account 118716
-Tue Sep  6 18:42:06 2022 Created account 119718
-Tue Sep  6 18:42:06 2022 Created account 119895
-Tue Sep  6 18:42:06 2022 Deposited 5447 to account: 126962
-Tue Sep  6 18:42:06 2022 Deposited 21726 to account: 111478
-Tue Sep  6 18:42:06 2022 Deposited 14771 to account: 100041
-Tue Sep  6 18:42:06 2022 Deposited 11538 to account: 118467
-Tue Sep  6 18:42:06 2022 Deposited 1869 to account: 132391
-Tue Sep  6 18:42:06 2022 Deposited 19912 to account: 106334
-Tue Sep  6 18:42:06 2022 Deposited 25667 to account: 123281
-Tue Sep  6 18:42:06 2022 Deposited 26299 to account: 119169
-Tue Sep  6 18:42:06 2022 Deposited 17035 to account: 126500
-Tue Sep  6 18:42:06 2022 Deposited 9894 to account: 115724
-Tue Sep  6 18:42:06 2022 Deposited 28703 to account: 128145
-Tue Sep  6 18:42:06 2022 Deposited 23811 to account: 129358
-Tue Sep  6 18:42:06 2022 Deposited 31322 to account: 124464
-Tue Sep  6 18:42:06 2022 Deposited 30333 to account: 105705
-Tue Sep  6 18:42:06 2022 Deposited 17673 to account: 117421
-Tue Sep  6 18:42:06 2022 Deposited 4664 to account: 116827
-Tue Sep  6 18:42:06 2022 Deposited 15141 to account: 109961
-Tue Sep  6 18:42:06 2022 Deposited 7711 to account: 119895
-Tue Sep  6 18:42:06 2022 Deposited 28253 to account: 100491
-Tue Sep  6 18:42:06 2022 Deposited 6868 to account: 102995
-Tue Sep  6 18:42:06 2022 Deposited 25547 to account: 111942
-Tue Sep  6 18:42:06 2022 Deposited 27644 to account: 104827
-Tue Sep  6 18:42:06 2022 Deposited 32662 to account: 105436
-Tue Sep  6 18:42:06 2022 Deposited 32757 to account: 118716
-Tue Sep  6 18:42:06 2022 Deposited 20037 to account: 114604
-Tue Sep  6 18:42:06 2022 Deposited 12859 to account: 100292
-Tue Sep  6 18:42:07 2022 Deposited 8723 to account: 103902
-Tue Sep  6 18:42:07 2022 Deposited 9741 to account: 100153
-Tue Sep  6 18:42:07 2022 Deposited 27529 to account: 112382
-Tue Sep  6 18:42:07 2022 Deposited 778 to account: 119718
-Tue Sep  6 18:42:53 2022 Deleted all accounts
-Tue Sep  6 18:42:57 2022 Created account 100041
-Tue Sep  6 18:42:57 2022 Created account 118467
-Tue Sep  6 18:42:57 2022 Created account 106334
-Tue Sep  6 18:42:57 2022 Created account 126500
-Tue Sep  6 18:42:57 2022 Created account 119169
-Tue Sep  6 18:42:57 2022 Created account 115724
-Tue Sep  6 18:42:57 2022 Created account 111478
-Tue Sep  6 18:42:57 2022 Created account 129358
-Tue Sep  6 18:42:57 2022 Created account 126962
-Tue Sep  6 18:42:57 2022 Created account 124464
-Tue Sep  6 18:42:57 2022 Deposited 5705 to account: 100041
-Tue Sep  6 18:42:57 2022 Deposited 28145 to account: 118467
-Tue Sep  6 18:42:57 2022 Deposited 23281 to account: 106334
-Tue Sep  6 18:42:57 2022 Deposited 16827 to account: 126500
-Tue Sep  6 18:42:57 2022 Deposited 9961 to account: 119169
-Tue Sep  6 18:42:57 2022 Deposited 491 to account: 115724
-Tue Sep  6 18:42:57 2022 Deposited 2995 to account: 126962
-Tue Sep  6 18:42:57 2022 Deposited 11942 to account: 111478
-Tue Sep  6 18:42:57 2022 Deposited 4827 to account: 129358
-Tue Sep  6 18:42:57 2022 Deposited 5436 to account: 124464
-Tue Sep  6 18:43:22 2022 Deposited 18000.000000 to account 115724
-Tue Sep  6 18:43:55 2022 Update acc no 100041 changed name from Test to Awet
+Tue Sep  6 18:49:31 2022 Deleted all accounts
+Tue Sep  6 18:49:35 2022 Created account 100041
+Tue Sep  6 18:49:35 2022 Created account 118467
+Tue Sep  6 18:49:35 2022 Created account 106334
+Tue Sep  6 18:49:35 2022 Created account 126500
+Tue Sep  6 18:49:35 2022 Created account 119169
+Tue Sep  6 18:49:35 2022 Created account 115724
+Tue Sep  6 18:49:35 2022 Created account 111478
+Tue Sep  6 18:49:35 2022 Created account 129358
+Tue Sep  6 18:49:35 2022 Created account 126962
+Tue Sep  6 18:49:35 2022 Created account 124464
+Tue Sep  6 18:49:35 2022 Deposited 5705 to account: 100041
+Tue Sep  6 18:49:35 2022 Deposited 28145 to account: 118467
+Tue Sep  6 18:49:35 2022 Deposited 23281 to account: 106334
+Tue Sep  6 18:49:35 2022 Deposited 16827 to account: 126500
+Tue Sep  6 18:49:35 2022 Deposited 9961 to account: 119169
+Tue Sep  6 18:49:35 2022 Deposited 491 to account: 115724
+Tue Sep  6 18:49:35 2022 Deposited 2995 to account: 126962
+Tue Sep  6 18:49:35 2022 Deposited 11942 to account: 111478
+Tue Sep  6 18:49:35 2022 Deposited 4827 to account: 129358
+Tue Sep  6 18:49:35 2022 Deposited 5436 to account: 124464
+Tue Sep  6 18:50:05 2022 Deposited 18000.000000 to account 115724
+Tue Sep  6 18:50:21 2022 Update acc no 100041 changed name from Test to Awet
