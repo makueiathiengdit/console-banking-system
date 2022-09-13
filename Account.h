@@ -6,11 +6,12 @@ private:
 	int account_number;
 	std::string name;
 	double balance;
-	bool is_blocked;
+	bool is_blocked = false;
 public:
 	Account(void);
-	Account(int,std::string);
 	Account(int, double);
+	Account(int,std::string);
+	Account(int acc_no, std::string owner, double bal);
 	~Account();
 	void SetAccountNumber(int number);
 	int GetAccountNumber(void);

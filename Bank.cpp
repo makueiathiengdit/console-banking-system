@@ -245,7 +245,7 @@ void Bank::UpdateAccountName(int acc_no, std::string name)
         {
             std::string old_name = _accounts[acc_no].GetName();
             _accounts[acc_no].SetName(name);
-            std::string msg = "Update acc no ";
+            std::string msg = "Updated account: ";
             msg += std::to_string(acc_no);
             msg += " changed name from " + old_name + " to " + name;
             std::cout << msg;

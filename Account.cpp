@@ -17,6 +17,14 @@ Account::Account(int acc_no, std::string owner)
     is_blocked = false;
 }
 
+Account::Account(int acc_no, std::string owner, double bal)
+{
+    account_number = acc_no;
+    name = owner;
+    balance = bal;
+    is_blocked = false;
+}
+
 Account::Account(int acc_no, double bal)
 {
     account_number = acc_no;
