@@ -1,6 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include "Logger.h"
+Logger::Logger()
+{
+	db_name = "db.dat";
+	file_name = "logs.txt";
+}
 void Logger::Log(std::string msg, std::string file)
 {
 	std::ofstream db(file, std::ios::app);
@@ -16,11 +21,3 @@ void Logger::Log(std::string msg, std::string file)
 	}
 }
 
-//Logger Logger::GetInstance(void)
-//{
-//	if (instance == nullptr)
-//	{
-//		instance = new Logger;
-//	}
-//	return *instance;
-//}

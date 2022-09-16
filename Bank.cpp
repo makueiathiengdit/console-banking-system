@@ -42,6 +42,26 @@ void Bank::CreateAccount(std::string owner)
     std::string msg = "Created account ";
     msg += std::to_string(acc_no);
     Log(msg);
+   
+}
+
+void Bank::CreateTestAccount()
+{
+    int acc_no = GenerateAccountNumber();
+    std::string owner = "Test";
+    while (AccountExists(acc_no))
+    {
+        acc_no = GenerateAccountNumber();
+    }
+
+    Account acc(acc_no, owner);
+
+    _accounts[acc_no] = acc;
+    std::cout << "\nAccount created: " << acc_no << "\n";
+    std::string msg = "Created account ";
+    msg += std::to_string(acc_no);
+    Log(msg);
+    Deposit(acc_no, rand());
 }
 
 void Bank::DeleteAccount(int acc_no)
@@ -68,7 +88,7 @@ void Bank::DeleteAll(void)
     {
         std::cout << "Deleting all accounts......";
         _accounts.clear();
-        //WriteToDB();
+        WriteToDB();
         std::cout << "done\n";
         Log("Deleted all accounts");
     }
@@ -263,20 +283,9 @@ void Bank::Populate(int how_many)
 {
     while (how_many)
     {
-        CreateAccount("Test");
+        CreateTestAccount();
         how_many--;
-    }
-  
-    for (auto& acc : _accounts)
-    {
-        int amount = rand();
-        acc.second.Deposit(amount);
-        std::string msg = "Deposited ";
-        msg += std::to_string(amount);
-        msg += " to account: ";
-        msg += std::to_string(acc.second.GetAccountNumber());
-        Log(msg);
-    }  
+    } 
 }
 
 bool Bank::AccountExists(int acc_no)
@@ -337,7 +346,7 @@ double Bank::BankValue(void)
 
 void Bank::ReadFromDB(void)
 {
-    std::ifstream db(this->db_name, std::ios::in|std::ios::app);
+    std::ifstream db(this->db_name, std::ios::in);
     if (db.is_open())
     {
         std::cout << "Reading from db...";
@@ -356,7 +365,6 @@ void Bank::ReadFromDB(void)
         }
         db.close();
         std::cout << "Done\n";
-
     }
     else
     {

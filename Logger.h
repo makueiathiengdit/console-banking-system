@@ -4,10 +4,8 @@ class Logger
 {
 	std::string db_name;
 	std::string file_name;
-	Logger* instance = nullptr;
-	Logger();
 public:
+	Logger();
 	void Log(std::string msg, std::string file);
-	Logger GetInstance(void);
 };
 

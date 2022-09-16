@@ -13,6 +13,8 @@ public:
 	~Bank();
 	Account FindById(int);
 	void CreateAccount(std::string owner);
+	void CreateTestAccount();
+
 	void DeleteAccount(int acc_no);
 	void DeleteAll(void);
 	void Show(int acc_no);
